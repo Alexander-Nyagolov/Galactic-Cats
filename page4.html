@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <h2 class="chapter-title">Глава 3: Подготовката</h2>
+                        <p>
+                            Докато се връщаше в апартамента им, Лукас се чувстваше слаб и изтощен от кратката битка, но и беше умислен, заради всички събития, които се бяха случили този ден. Той знаеше, че трябва да стане по-силен, по-бърз и по-способен, ако иска да победи Ксеркс и да спаси баща си. Решен да успее, той се зае със самоусъвършенстване, за да подсили собствената си воля и решителност. Беше готов да се изправи срещу всяка опасност, която се изпречи на пътя му.
+
+                            Той започна с упражнения за подобряване на физическите си способности. Тичаше из града, скачаше върху високи сгради и практикуваше бойни техники, които беше видял баща му да използва. С всеки изминал ден той ставаше по-силен и по-издръжлив, тялото му се адаптира към новата му рутина. Умът му също се разви, докато се учеше да контролира новооткритите си сили. Лукас разбра, че може да манипулира енергията около себе си, създавайки мощни ударни вълни и защитни щитове. Тази способност го изненада, но и изпълни с надежда. Може би все пак имаше шанс да победи създанието и да спаси баща си.
+
+                            Докато дните се превръщаха в седмици, Лукас продължи обучението си, решен да стане възможно най-добрият. Той се научи да се трансформира, да променя формата си според нуждите, черпейки сила от самата тъкан на реалността. Тази способност го направи още по-опасен противник, давайки му предимство пред всеки враг, който можеше да срещне. Подхранван от гнева и решителността си, Лукас израсна не само физически, но и умствено и духовно. Той разви остро чувство за интуиция, което му позволяваше да предусеща опасностите и да взема бързи решения в критични ситуации. Духовното му израстване беше също толкова забележително, тъй като той започна да разбира връзката между своите сили и останалата Вселената. Той научи, че неговите способности не са просто подаръци, а проявления на универсалната енергия, която свързва всички живи същества.
+                            
+                            Докато седмиците се превръщаха в месеци, Лукас продължи обучението си, тялото и умът му се развиваха, докато се подготвяше да се изправи срещу Ксеркс и да спаси баща си. Той знаеше, че пътуването му няма да е лесно, но беше решен да защити своя свят и да гарантира, че никой друг няма да страда като него.
+
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>7<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>8</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 4;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

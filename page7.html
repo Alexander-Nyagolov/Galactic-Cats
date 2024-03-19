@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <h2 class="chapter-title">Глава 6: Битката между Лукас и Ксеркс</h2>
+                        <p>
+                            Битката между Лукас и Ксеркс беше свирепа и ожесточена. И двамата бяха силни и мощни същества, всяко от които притежаваше уникални способности, които щяха да определят резултата от тяхното противопоставяне.
+
+                            Лукас, със своята смелост и решителност, влезе в битката с ясното съзнание, че се бори за справедливост. Той беше мотивиран да открие и спаси баща си и искаше да защити своя свят от разрушителното влияние на Ксеркс. Неговите сили произтичаха от дълбокото му желание да победи врага и да възстанови мира в галактиката. Ксеркс, от друга страна, беше воден от жаждата си за власт и господство. Той беше дошъл в галактиката Андромеда с цел да пороби и тероризира всички форми на живот. Неговата сила беше почти неограничена и той не се колебаеше да я използва срещу всеки, който се осмеляваше да му се противопостави.
+
+                            Битката започна с размяна на удари между двамата противници. Лукас използва своята ловкост и пъргавина, за да избегне атаките на Ксеркс, докато същевременно нанасяше удари с лапите си. Ксеркс, от друга страна, разчиташе на грубата си сила и чистата си мощ, за да смаже Лукас. Докато битката продължаваше, стана ясно, че нито един от тях не може лесно да надвие другия. Силите им бяха равностойни и всеки удар, който нанасяха, беше отвръщан с двойно по-голям. Решен да спечели битката, Лукас започна да черпи сила от чувството си за справедливост и отмъщение. Той си припомни жертвите, направени от неговия народ, и решимостта си да защити своя свят. Тази емоционална сила му даде допълнително предимство и той започна да надделява над Ксеркс.
+
+                            Междувременно Ксеркс осъзна, че битката не върви по начина, по който беше планирал. Той беше подценил решимостта и силата на Лукас и сега беше изправен пред възможността да загуби контрола над галактиката Андромеда. В отчаян опит да обърне хода на битката, Ксеркс призова своите последователи, същества от неговото измерение, които бяха пръснати из галактиката. Тези създания се впуснаха в битката, добавяйки своята сила към тази на Ксеркс. Въпреки подкрепленията, Ксеркс все още не можеше да надвие Лукас. Силата на Лукас, подхранвана от неговата кауза, продължаваше да расте и той започна да надделява над Ксеркс и неговите последователи. В кулминацията на битката Лукас и Ксеркс се сблъскаха в епична схватка. И двамата вложиха цялата си сила в битката, всеки решен да излезе победител. 
+
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>11<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>12</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 7;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

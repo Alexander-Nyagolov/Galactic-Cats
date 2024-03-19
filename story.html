@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <h2 class="chapter-title">Глава 1: Предистория</h2>
+                        <p>
+                            Животът на нашите оранжеви котки Лукас и баща му Уискърс беше прост и удовлетворяващ. Те живееха в малък апартамент в сърцето на Париж, сгушен между калдъръмени улици и стари сгради. Апартаментът принадлежеше на възрастна жена на име Мадам Клодин, която беше известна пекарка в града. Тя имаше слабост към котките и ги прие с отворени обятия, осигурявайки им дом и храна.
+
+                            Дните на нашите котки започваха рано сутрин, когато Мадам Клодин ставаше, за да започне работата си. Тя приготвяше прясна френска багета, кроасани и други сладкиши, които изпълваха апартамента с опияняващ аромат.
+
+                            Уискърс обичаше да наблюдава как Мадам Клодин работи, любопитството му беше събудено от процеса на печене. Той често се прокрадваше до работното й пространство, наблюдавайки как тя меси тестото, оформя го на рула и го поставя във фурната. Лукас беше очарован от света отвън. Той обичаше да изследва квартала, да играе с уличните котки и да дебне мишки в близките контейнери за боклук. Често прекарваше часове в наблюдение на хората, изучавайки техните навици и начин на живот. Той беше особено очарован от децата, които играеха в близкия парк, и често се промъкваше, за да ги гледа.
+
+                            В края на всеки ден, Уискърс и Лукас се срещаха отново в апартамента, споделяйки преживяванията си и планирайки следващите си приключения. Вечер те се сгушваха до Мадам Клодин на дивана, докато тя четеше любимата си книга или гледаше телевизия. Те се наслаждаваха на нейната любов и грижовност, знаейки, че в нейния дом са в безопасност и обичани.
+
+                            Така животът им продължаваше, изпълнен с простота, щастие и чувство за принадлежност. Те не подозираха, че скоро животът им ще се промени драстично и ще ги отведе на невероятно пътешествие, което ще изпита тяхната смелост, лоялност и любов.
+
+                        </p>
+                        
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>1<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>2</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 1;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2 || currentPage == 1){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

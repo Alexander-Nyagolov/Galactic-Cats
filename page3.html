@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <p>
+                            Докато обикаляше езерото, Лукас забеляза, че водата изглежда по-плитка близо до мястото, където беше видял създанието за последен път. Той реши да влезе във водата, надявайки се да открие някакви следи или отпечатъци, оставени от създанието. Докато газеше през студената, лепкава вода, той усети как нещо докосва крака му. Стреснат, той погледна надолу и видя малка, подобна на риба опашка, плъзгаща се обратно във водата. Обзет от любопитство, Лукас реши да проучи по-нататък. Той извади малък камък от джоба си и го хвърли във водата. За негово учудване камъкът сякаш потъна много по-бавно от очакваното, сякаш водата беше по-плътна или по-гъста. Може би това беше причината създанието да може да стои изправено в езерото, помисли си той.
+
+                            Изведнъж Лукас чу шум зад себе си. Обръщайки се, той видя Ксеркс да излиза от сенките, очите му горяха със злобна светлина. Без да се колебае, Лукас грабна един камък и го хвърли по създанието. Създанието изрева и отстъпи назад, но не изглеждаше сериозно наранен. Лукас знаеше, че трябва да избяга, но пътят му беше блокиран от Ксеркс. Той се обърна и хукна обратно към брега на езерото, надявайки се да намери някакъв начин да се измъкне. Задъхан, Лукас погледна създанието. „Какво искаш?“ — попита той, гласът му едва надхвърляше шепота. Създанието издаде нисък, гърлен звук, който Лукас прие за смях. След това Ксеркс посочи към езерото, преди да се обърне и да изчезне в мъглата. Объркан, Лукас гледаше след създанието, чудейки се дали не е полудял. Но когато погледна отново към езерото, рибешката опашка вече не се виждаше. Решен да разбере истината, Лукас си обеща, че ще направи всичко по силите си.
+                            
+                            С новооткрито чувство за цел Лукас се върна обратно през гората, мислейки за невероятните събития, на които беше станал свидетел. Той знаеше, че животът му никога няма да бъде същият и че съдбата му е свързана с това мистериозно създание и неговото езеро. И въпреки страха и несигурността, които изпитваше, той нямаше търпение да види какви приключения го очакват в бъдеще.
+                            
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>5<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>6</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 3;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

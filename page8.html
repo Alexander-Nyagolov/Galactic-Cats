@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <p>
+                            Междувременно майката на Лукас, Мирабел, беше научила за битката между сина й и Ксеркс и беше решила да се включи. Тя знаеше, че Лукас ще има нужда от цялата помощ, която може да получи, и искаше да бъде до него в този важен момент. Майката на Лукас се впусна в галактиката Андромеда, използвайки магическите си сили, за да пътува през пространството. Тя откри Лукас дълбоко в кората на планетата, където се провеждаше битката между сина й и Ксеркс. Майката на Лукас се включи в битката, използвайки магическите си сили, за да помогне на сина си. Заедно те се изправиха срещу Ксеркс, като използваха комбинация от физическа сила и магия, за да го победят.
+
+                            В крайна сметка Ксеркс беше победен под лапите на Лукас и Мирабел. Победата им отбеляза края на управлението на Ксеркс в галактиката Андромеда. Тялото на Ксеркс се разпадна на прах, когато силата му беше напълно изчерпана. Майката на Лукас използва магията си, за да излекува всички рани и да възстанови баланса в района. Тяхната победа също така символизира триумфа на доброто над злото и надеждата за по-светло бъдеще за всички форми на живот в галактиката. След победата над Ксеркс, Лукас беше решен да сподели историята си и да помогне за възстановяването на мира и хармонията във Вселената. Той също така продължаваше да търси баща си, знаейки, че Уискърс е някъде там и че един ден ще го види отново. 
+
+                            След края на битката, Мирабел забеляза Уискърс, който беше пленен в клетка, спусната от железни окови високо над реки от лава. Тя използва магията си, за да освободи баща му от клетката и да го спусне безопасно на земята.
+
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>13<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>14</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 8;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

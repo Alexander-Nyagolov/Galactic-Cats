@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <h2 class="chapter-title">Глава 2: Началото</h2>
+                        <p>
+                            Един слънчев следобед, докато се излежаваше на любимата си наблюдателница на покрива, Уискърс забеляза нещо необичайно. В далечината нещо блещукаше, привличайки вниманието му и събуждайки любопитството му. Лукас, който винаги е бил нетърпелив за приключения, последва Уискърс към източника на светлината. Това, което откриха, щеше да промени живота им завинаги.
+
+                            В далечината, блещукането ставаше все по-отчетливо, разкривайки обект, какъвто нито един от тях не бе виждал досега. Беше същество, на име Ксеркс, което имаше човешки вид, но главата му беше ужасяващо съчетание от лъвска и тигрова муцуна, тялото му беше покрито с люспеста кожа като на крокодил, а краката му завършваха с остри нокти като на тиранозавър. Очите му горяха със зловеща светлина, а аурата около него излъчваше заплаха. Когато Ксеркс се приближи до Уискърс и Лукас, те бяха напълно неподготвени. Могъщият удар на Ксеркс уцели Уискърс, изпращайки го в безсъзнание. Лукас, макар и поразен от силата на създанието, някак успя да остане в съзнание. Той видя как Ксеркс вдигна баща му и след това изчезна в облак от енергия. Сърцето на момчето биеше лудо, докато то стоеше там, осъзнавайки сериозността на ситуацията. Знаеше, че трябва да намери начин да спаси баща си и да разбере повече за мистериозното създание, което ги беше нападнало.
+
+                            Лукас знаеше, че трябва да действа бързо, за да помогне на баща си. Той претърси околността за някакви следи или улики, които биха могли да обяснят присъствието на създанието. Докато изследваше, той забеляза, че блясъкът идва от малко, отдалечено езеро. Приближавайки се до водата, той видя отражението на създанието в повърхността и осъзна, че това може да е ключът към разбирането какво се случва. Решен да спаси Уискърс и да защити себе си и семейството си от създанието, Лукас реши да проучи езерото по-нататък. Той събра някои основни провизии, включително храна, вода и компас, преди да започне пътуването си. С новооткрита решителност той се впусна в неизвестното, готов да се изправи срещу всяка опасност, която се изпречи на пътя му.
+
+                            Докато Лукас навлизаше по-дълбоко в гората, той забеляза, че дърветата стават по-редки и земята под краката му става кална и мочурлива. Въздухът стана по-тежък и влажен, носейки със себе си слабия аромат на гнило. Въпреки тези неудобства, Лукас продължи напред, воден от неотложността на мисията си. След няколко часа ходене през гъстата гора, Лукас най-накрая стигна до брега на езерото. Водата беше тъмна и неподвижна, отразявайки надвисналите облаци отгоре. Той се взря в повърхността, опитвайки се да види отражението на създанието отново, но не видя нищо. Разтревожен, той реши да обиколи езерото, надявайки се да намери някаква следа или улика за създанието.
+
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>3<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>4</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 2;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <h2 class="chapter-title">Глава 5: Търсенето на Ксеркс</h2>
+                        <p>
+                            Лукас започна своето търсене, като първо провери любимите места на баща си в Париж. Той знаеше, че Уискърс често посещава тези места и се надяваше да намери някаква следа от него там. Въпреки щателното търсене, Лукас не можа да намери никакви следи от баща си. Разтревожен, Лукас реши да разшири търсенето си. Той знаеше, че баща му е имал познати в целия свят на котките и че може да е отишъл някъде другаде, за да помогне на приятелите си. Лукас тръгна на дълго пътешествие, посещавайки градове и общности на котки в цяла Европа. Докато пътуваше, Лукас срещаше много други котки, които бяха чували за Уискърс и знаеха за какво се е случило с него. Някои от тях предложиха помощ и подкрепа, докато други просто споделиха историите си за Уискърс и колко уважават баща му.
+
+                            Минаха месеци, докато Лукас пътуваше из Европа, но той все още не беше намерил никаква следа от баща си. Чувствайки се отчаян, той реши да потърси помощ от мъдри и силни котки, които можеха да знаят нещо за местонахождението на Уискърс. Лукас пропътува различни галактики, срещайки се с различни видове котки и научавайки за техните култури и традиции. По пътя той се сблъскваше с множество предизвикателства и опасности, но всеки път излизаше победител благодарение на уменията и силите, които е развил по време на обучението си.
+
+                            Накрая, след дълги пътувания и опасни битки, Лукас стигна до галактиката Андромеда. Тук той разбра, че Ксеркс, злодеят, който отвлече баща му, е бил видян за последно. Решен да открие баща си и да защити своя свят, Лукас се впусна в мисия да намери и победи Ксеркс. Докато навлизаше по-дълбоко в галактиката Андромеда, Лукас срещна различни същества, някои приятелски настроени, а други враждебни. Той се биеше храбро, използвайки новооткритите си сили, за да преодолее многобройните предизвикателства, които се изпречиха на пътя му.
+
+                            Накрая Лукас намери Ксеркс в сърцето на галактиката Андромеда. Съществото от друго измерение беше създало империя, която тероризираше всички форми на живот в галактиката Андромеда. Лукас знаеше, че трябва да действа бързо, за да спре Ксеркс и да спаси всички от неговото господство.
+
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>11<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>12</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 6;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

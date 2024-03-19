@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <h2 class="chapter-title">Глава 4: Мирабел</h2>
+                        <p>
+                            Мирабел, галактическа котка с магически сили, живееше живот, изпълнен с приключения и опасности. Като предводител на междугалактическия си клан, тя беше посветила живота си на защитата на своя народ и поддържането на баланса в Космоса. Въпреки това, когато се роди синът й Лукас, тя взе трудното решение да го изостави на Земята с баща му Уискърс.
+
+                            Мирабел знаеше, че животът на Лукас ще бъде изпълнен с опасности, ако остане в Космоса. Тя беше видяла твърде много от конфликтите между нейния клан и клана на Ксеркс, същество от друго измерение с ужасяваща форма и зловещи намерения. Клановете бяха въвлечени в безмилостна война, която заплашваше цялото съществуване на всички форми на живот във Вселената. С натежало сърце Мирабел остави Лукас на Земята, надявайки се, че Уискърс ще осигури безопасността и грижите, от които синът й се нуждае. Тя обеща да се върне някой ден и да вземе Лукас със себе си, но времето минаваше и тя не можеше да устои на повика на дълга си.
+
+                            Години наред Мирабел защитаваше своя клан и се биеше с Ксеркс и поддръжниците му. Тя стана известен герой в галактиката, почитана заради смелостта и магическите си сили. Въпреки успеха си, тя никога не забрави обещанието си към Лукас и копнееше да го види отново. Докато годините се превръщаха в десетилетия, войната между клановете на Мирабел и Ксеркс ставаше все по-интензивна. Кланът на Ксеркс беше по-многоброен и по-добре оборудван, което затрудняваше клана на Мирабел да удържа позициите си.
+
+                            Един ден, по време на една от битките, Мирабел се натъкна на информация, която я разтърси из основи. Кланът на Ксеркс беше отвлякъл семейството ѝ, използвайки ги като заложници, за да я принудят да се предаде. Сърцето й се разби, когато разбра, че любимите й хора са в опасност, и тя се зарече да ги спаси на всяка цена.
+
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>9<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>10</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 5;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            window.location.href = nextPageURL;
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>

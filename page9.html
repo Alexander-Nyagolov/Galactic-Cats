@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Cats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="title">
+            <a href="">
+                <img class="banner" src="images/transparentLukas.png" alt="" />
+            </a>
+        </div>
+        <ul class="menu">
+            <li class="menu-item"><a href="index.html">Начало</a></li>
+            <li class="menu-item"><a href="characters.html">Герои</a></li>
+            <li class="menu-item"><a href="places.html">Места</a></li>
+            <li class="menu-item"><a href="">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div id="wrapper">
+            <div id="container">
+        
+                <section class="open-book">
+                    <header>
+                        <h1>Галактически котки</h1>
+                        <h6>Александър Няголов и Магдалена Димова</h6>
+                    </header>
+                    <article>
+                        <h2 class="chapter-title">Глава 7: Обединението на семейството</h2>
+                        <p>
+                            След победата на Лукас и Мирабел над Ксеркс семейството най-накрая се събра отново. Лукас, майка му Мирабел и баща му Уискърс стояха заедно, благодарни за победата си и щастливи, че са заедно. Семейството се зарече да продължи да защитава своя свят и да се бори за справедливост и мир във всички галактики. Те знаеха, че пътят напред няма да е лесен, но бяха решени да се изправят пред всяко предизвикателство заедно.
+
+                            Минаха месеци и семейството продължи да укрепва връзката си. Лукас, вече млад възрастен, използва силите си, за да помогне на своя народ и да защити Вселената от всякакви потенциални заплахи. Уискърс, от друга страна, продължи да преподава на Лукас и да предава знанията си за магията и силата. Междувременно Мирабел използва своите магически способности, за да поддържа баланса в галактиката и да помага на нуждаещите се. Тя също така служи като лидер на клана си, ръководейки усилията им да възстановят мира и хармонията във Вселената. Семейството често пътуваше заедно, изследвайки нови светове и установявайки връзки с други кланове и герои. Те се сблъскаха с много предизвикателства по пътя, но винаги се изправяха заедно, по-силни от всякога.
+
+                            С течение на времето Лукас и Уискърс започнаха да разработват планове за създаване на училище за млади котки, където да преподават своите умения и знания. Те вярваха, че чрез образование и подготовка следващото поколение може да защити Вселената от всякакви бъдещи заплахи. Мирабел подкрепи идеята и се съгласи да помогне за създаването на училището. Тя използва магическите си способности, за да изгради съоръжението и да осигури необходимите ресурси. Когато училището беше готово, то бързо се превърна в център на обучение за млади котки от цялата Вселена. Учениците се стичаха от всички краища, нетърпеливи да учат от Лукас, Уискърс и Мирабел.
+
+                            С течение на времето училището се превърна в символ на надежда и единство на Вселената. Младите ученици, вдъхновени от примера на това геройско семейство, израснаха, за да станат защитници на своя свят, точно както Лукас, Мирабел и Уискърс бяха направили преди тях. Семейството продължи да се бори за справедливост и мир във Вселената, като винаги стоеше заедно, независимо от предизвикателствата, пред които се изправяше. Тяхната история служи като напомняне, че със смелост, решителност и единство всеки може да преодолее дори най-големите трудности.
+
+                        </p>
+                    </article>
+                    <footer>
+                        <ol id="page-numbers">
+                            <li>15<button class="prev-page">Предишна страница</button></li>
+                            
+                            <li><button class="next-page">Следваща страница</button>16</li>
+                        </ol>
+                    </footer>
+                </section>
+        
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pages = 10;
+    const articles = document.querySelectorAll('.open-book > article');
+    let currentPage = 9;
+
+    // Function to turn to the next page
+    function turnToNextPage() {
+        if (currentPage < pages.length ) {
+            articles[currentPage].classList.remove('show-page');
+            currentPage++;
+            articles[currentPage].classList.add('show-page');
+        } else {
+            // If it's the last page, navigate to the next HTML file
+            const nextPageURL = `page${currentPage + 1}.html`; // Assuming the HTML files are named page1.html, page2.html, etc.
+            
+        }
+    }
+
+    function turnToPreviousPage() {
+        if (currentPage < pages.length) {
+            pages[currentPage].classList.remove('show-page');
+            currentPage--;
+            pages[currentPage].classList.add('show-page');
+        } else {
+            if(currentPage == 2){
+                const nextPageURL = `story.html`; 
+                window.location.href = nextPageURL;
+            }
+            else{
+                const nextPageURL = `page${currentPage - 1}.html`;    
+                window.location.href = nextPageURL;
+            }
+        }
+    }
+
+    // Event listener for next page button
+    document.querySelector('.next-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToNextPage();
+    });
+
+    document.querySelector('.prev-page').addEventListener('click', function() {
+        // Trigger page turning animation
+        turnToPreviousPage();
+    });
+        });
+    </script>
+
+    <div class="footer">
+        <img src="images/lukas.jfif" alt="Galactic Cats Logo" height="200px">
+        <p>Автори: Александър Няголов | Магдалена Димова</p>
+    </div>
+</body>
+
+</html>
